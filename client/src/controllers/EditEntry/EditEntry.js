@@ -15,14 +15,20 @@ class EditEntry extends Component {
             .catch((err) => console.error(err))
     }
 
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
     render() {
         return <div>
             <form>
-                <input type="text" name="firstName" value={this.state.firstName}/>
+                <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
                 <br/>
-                <input type="text" name="lastName" value={this.state.lastName}/>
+                <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
                 <br/>
-                <input type="text" name="phoneNumber" value={this.state.phoneNumber}/>
+                <input type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}/>
                 <br/>
                 <br/>
                 <input type="submit" value="Edit entry"/>
