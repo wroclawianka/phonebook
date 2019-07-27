@@ -15,7 +15,7 @@ class EntriesTable extends Component {
                 <tbody>
                 {this.props.entries.map((entry) => {
                     return (
-                        <tr>
+                        <tr key={entry._id}>
                             <td>{entry.firstName}</td>
                             <td>{entry.lastName}</td>
                             <td>{entry.phoneNumber}</td>
