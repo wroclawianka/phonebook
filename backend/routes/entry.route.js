@@ -20,8 +20,8 @@ router.get('/get/entry', (req, res) => {
 
 router.get('/get/entry/:id', (req, res) => {
     Entry.findOne({_id: req.params.id}, (err, data) => {
-        if (err) return res.json({ success: false, error: err });
-        return res.json({ success: true, data: data });
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: data});
     });
 });
 
