@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 const API_PORT = 3001;
 const app = express();
+app.use(cors());
 const router = express.Router();
 const dbRoute = 'mongodb+srv://admin:Or7XXfw3WCRbi1HF@phonebook-q7m81.mongodb.net/test?retryWrites=true&w=majority';
 
