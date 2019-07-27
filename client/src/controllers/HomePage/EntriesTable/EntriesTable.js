@@ -10,6 +10,7 @@ class EntriesTable extends Component {
                     <td>First Name</td>
                     <td>Last Name</td>
                     <td>Phone Number</td>
+                    <td></td>
                 </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,7 @@ class EntriesTable extends Component {
                             <td>{entry.firstName}</td>
                             <td>{entry.lastName}</td>
                             <td>{entry.phoneNumber}</td>
+                            <td><a href={`/edit-entry/${entry._id}`}>[edit]</a></td>
                         </tr>
                     )
                 })
