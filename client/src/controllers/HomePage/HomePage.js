@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import api from "../../api.json"
+import EntriesTable from './EntriesTable/EntriesTable';
 
 class HomePage extends Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            entries: []
+        };
     }
 
     getEntries = (event) => {
@@ -22,6 +25,12 @@ class HomePage extends Component {
                    type="text"
                    name="searchedValue"
                    onChange={this.getEntries}/>
+            <div>
+                { this.state.entries.length
+                    ? <EntriesTable entries={this.state.entries}/>
+                    : <p>Search entries to see results...</p>
+                }
+            </div>
         </div>
     }
 }
