@@ -5,9 +5,7 @@ import api from "../../api.json"
 class HomePage extends Component {
     constructor() {
         super();
-        this.state = {
-            searchedValue: ""
-        };
+        this.state = {};
     }
 
     getEntries = (event) => {
