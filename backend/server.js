@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
 
 const API_PORT = 3001;
 const app = express();
@@ -15,6 +17,11 @@ db.once('open', () => console.log('connected to the database'));
 
 // check if connection with the database is successful
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+// parse the request body
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(logger('dev'));
 
 // append /api for http requests
 app.use('/api', router);
