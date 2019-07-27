@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const entry = require('./routes/entry.route');
 
 const API_PORT = 3001;
 const app = express();
@@ -24,6 +25,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
+// add routes
+app.use('/api', entry);
 
 // launch server into a port
 app.listen(API_PORT, () => console.log('Server is up and running on port number ' + API_PORT));
