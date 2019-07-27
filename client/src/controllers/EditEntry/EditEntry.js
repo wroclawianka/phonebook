@@ -16,7 +16,18 @@ class EditEntry extends Component {
     }
 
     render() {
-        return <div></div>
+        return <div>
+            <form>
+                <input type="text" name="firstName" value={this.state.firstName}/>
+                <br/>
+                <input type="text" name="lastName" value={this.state.lastName}/>
+                <br/>
+                <input type="text" name="phoneNumber" value={this.state.phoneNumber}/>
+                <br/>
+                <br/>
+                <input type="submit" value="Edit entry"/>
+            </form>
+        </div>
     }
 }
 
