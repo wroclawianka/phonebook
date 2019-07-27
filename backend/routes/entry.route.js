@@ -18,6 +18,13 @@ router.get('/get/entry', (req, res) => {
         });
 });
 
+router.get('/get/entry/:id', (req, res) => {
+    Entry.findOne({_id: req.params.id}, (err, data) => {
+        if (err) return res.json({ success: false, error: err });
+        return res.json({ success: true, data: data });
+    });
+});
+
 router.post('/post/entry', (req, res) => {
     const entry = new Entry();
     console.log(req.body);
@@ -29,6 +36,6 @@ router.post('/post/entry', (req, res) => {
         if (err) return res.json({success: false, error: err});
         return res.json({success: true});
     });
-})
+});
 
 module.exports = router;
