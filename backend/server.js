@@ -8,7 +8,7 @@ const entry = require('./routes/entry.route');
 const API_PORT = 3001;
 const app = express();
 app.use(cors());
-const dbRoute = 'mongodb+srv://admin:Or7XXfw3WCRbi1HF@phonebook-q7m81.mongodb.net/test?retryWrites=true&w=majority';
+const dbRoute = 'mongodb+srv://admin:Or7XXfw3WCRbi1HF@phonebook-q7m81.mongodb.net/phonebook?retryWrites=true&w=majority';
 
 // connect to db
 mongoose.connect(dbRoute, {useNewUrlParser: true});
