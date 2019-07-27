@@ -21,9 +21,14 @@ class EditEntry extends Component {
         });
     };
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+    };
+
+
     render() {
         return <div>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
                 <br/>
                 <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
