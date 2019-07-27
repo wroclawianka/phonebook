@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './EntriesTable.css';
 
 class EntriesTable extends Component {
 
