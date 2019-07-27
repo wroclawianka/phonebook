@@ -9,10 +9,8 @@ class HomePage extends Component {
         };
     }
 
-    searchValue = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
+    getEntries = (event) => {
+        const params = {value: event.target.value};
     };
 
 
@@ -21,7 +19,7 @@ class HomePage extends Component {
             <input className="form-control"
                    type="text"
                    name="searchedValue"
-                   onChange={this.searchValue}/>
+                   onChange={this.getEntries}/>
         </div>
     }
 }
