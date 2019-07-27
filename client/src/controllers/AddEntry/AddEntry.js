@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import axios from 'axios';
+import api from "../../api.json"
 
 class AddEntry extends Component {
     constructor() {
@@ -14,11 +16,23 @@ class AddEntry extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-    }
+    };
 
     handleSubmit = (event) => {
         event.preventDefault();
-    }
+        const data = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            phoneNumber: this.state.phoneNumber
+        };
+        this.saveEntry(data);
+    };
+
+    saveEntry = (data) => {
+        axios.post(api.url + 'post/entry', data)
+            .then(() => alert("Entry added"))
+            .catch((err) => console.error(err));
+    };
 
     render() {
         return <div>
