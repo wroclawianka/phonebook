@@ -14,7 +14,7 @@ router.get('/get/entry', (req, res) => {
             ]
         }, (err, data) => {
             if (err) return res.json({success: false, error: err});
-            return res.json({success: true, data: data});
+            return res.json({success: true, entries: data});
         });
 });
 
