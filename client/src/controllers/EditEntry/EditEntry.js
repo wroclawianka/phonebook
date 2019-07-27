@@ -23,8 +23,22 @@ class EditEntry extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.updateEntry()
     };
 
+    updateEntry = () => {
+        const body = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            phoneNumber: this.state.phoneNumber
+        };
+        const id = this.state._id;
+        axios.post(api.url + `patch/entry/${id}`, body)
+            .then(() => {
+                alert("Entry edited")
+            })
+            .catch((err) => console.error(err))
+    };
 
     render() {
         return <div>
