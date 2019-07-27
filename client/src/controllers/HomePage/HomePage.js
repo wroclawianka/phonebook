@@ -13,7 +13,7 @@ class HomePage extends Component {
 
     getEntries = (event) => {
         const params = {value: event.target.value};
-        axios.get(api.url + 'get/entry', {params})
+        axios.get(api.url + '/get/entry', {params})
             .then((res) => {this.setState({entries: res.data.entries})})
             .catch(err => console.error(err));
     };

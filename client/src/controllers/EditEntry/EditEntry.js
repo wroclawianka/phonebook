@@ -11,7 +11,7 @@ class EditEntry extends Component {
 
     componentDidMount() {
         const {match: {params}} = this.props;
-        axios.get(api.url + `get/entry/${params.id}`)
+        axios.get(api.url + `/get/entry/${params.id}`)
             .then(({data: res}) => this.setState({...res.data}))
             .catch((err) => console.error(err))
     }
@@ -39,7 +39,7 @@ class EditEntry extends Component {
             phoneNumber: this.state.phoneNumber
         };
         const id = this.state._id;
-        axios.post(api.url + `patch/entry/${id}`, body)
+        axios.post(api.url + `/patch/entry/${id}`, body)
             .then(() => {
                 alert("Entry edited")
             })

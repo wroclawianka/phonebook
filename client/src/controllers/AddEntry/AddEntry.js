@@ -35,7 +35,7 @@ class AddEntry extends Component {
     };
 
     saveEntry = (data) => {
-        axios.post(api.url + 'post/entry', data)
+        axios.post(api.url + '/post/entry', data)
             .then(() => alert("Entry added"))
             .catch((err) => console.error(err));
     };
