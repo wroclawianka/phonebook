@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import api from "../../api.json"
 
 class HomePage extends Component {
     constructor() {
@@ -11,6 +12,9 @@ class HomePage extends Component {
 
     getEntries = (event) => {
         const params = {value: event.target.value};
+        axios.get(api.url + 'get/entry', {params})
+            .then((res) => {this.setState({entries: res.data.entries})})
+            .catch(err => console.error(err));
     };
 
 
