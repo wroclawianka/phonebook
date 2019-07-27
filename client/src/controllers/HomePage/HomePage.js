@@ -31,6 +31,7 @@ class HomePage extends Component {
                     : <p>Search entries to see results...</p>
                 }
             </div>
+            <a href="/add-entry">Add Entry</a>
         </div>
     }
 }
