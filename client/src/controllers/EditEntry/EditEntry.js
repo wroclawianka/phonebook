@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import api from "../../api.json"
+import findInvalidValues from "../../invalidValues"
 
 class EditEntry extends Component {
     constructor() {
@@ -23,7 +24,12 @@ class EditEntry extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.updateEntry()
+        let invalidValues = findInvalidValues(this.state);
+        if (invalidValues.length) {
+            alert(`invalid values: ${invalidValues}`)
+        } else {
+            this.updateEntry()
+        }
     };
 
     updateEntry = () => {
