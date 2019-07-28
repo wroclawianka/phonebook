@@ -43,8 +43,7 @@ class AddEntry extends Component {
     };
 
     render() {
-        return <div>
-            <form noValidate autoComplete="off">
+        return <form noValidate autoComplete="off">
                 <TextField
                     required
                     id="standard-required"
@@ -72,7 +71,6 @@ class AddEntry extends Component {
                 <br/>
                 <Button variant="contained" onClick={this.handleSubmit} color="primary">Add Entry</Button>
             </form>
-        </div>
     }
 }
 
