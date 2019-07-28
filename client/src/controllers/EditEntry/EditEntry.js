@@ -2,13 +2,17 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import './EditEntry.css'
 import api from "../../api.json"
 import findInvalidValues from "../../invalidValues"
+import {Typography} from "@material-ui/core";
 
 class EditEntry extends Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            alert: ""
+        }
     }
 
     componentDidMount() {
@@ -28,7 +32,9 @@ class EditEntry extends Component {
         event.preventDefault();
         let invalidValues = findInvalidValues(this.state);
         if (invalidValues.length) {
-            alert(`invalid values: ${invalidValues}`)
+            this.setState({
+                alert: `invalid values: ${invalidValues}`
+            })
         } else {
             this.updateEntry()
         }
@@ -43,7 +49,9 @@ class EditEntry extends Component {
         const id = this.state._id;
         axios.post(api.url + `/patch/entry/${id}`, body)
             .then(() => {
-                alert("Entry edited")
+                this.setState({
+                    alert: "Entry added"
+                })
             })
             .catch((err) => console.error(err))
     };
@@ -89,6 +97,8 @@ class EditEntry extends Component {
             />
             <br/>
             <Button variant="contained" onClick={this.handleSubmit} color="primary">Edit Entry</Button>
+            <br/>
+            <Typography className="alert" variant="caption">{this.state.alert}</Typography>
         </form>
     }
 }
