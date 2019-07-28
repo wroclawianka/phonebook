@@ -1,0 +1,11 @@
+.editEntry {
+    text-align: center;
+}
+
+#editEntryBtn {
+    margin: 10px
+}
+
+.alert {
+    color: darkred;
+}

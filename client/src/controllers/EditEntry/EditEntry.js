@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import api from "../../api.json"
-import findInvalidValues from "../../invalidValues"
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import {Typography} from "@material-ui/core";
+import './EditEntry.css'
+import api from "../../api.json"
+import findInvalidValues from "../../invalidValues"
 
 class EditEntry extends Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            alert: ""
+        }
     }
 
     componentDidMount() {
@@ -28,7 +32,9 @@ class EditEntry extends Component {
         event.preventDefault();
         let invalidValues = findInvalidValues(this.state);
         if (invalidValues.length) {
-            alert(`invalid values: ${invalidValues}`)
+            this.setState({
+                alert: `invalid values: ${invalidValues}`
+            })
         } else {
             this.updateEntry()
         }
@@ -43,13 +49,15 @@ class EditEntry extends Component {
         const id = this.state._id;
         axios.post(api.url + `/patch/entry/${id}`, body)
             .then(() => {
-                alert("Entry edited")
+                this.setState({
+                    alert: "Entry edited"
+                })
             })
             .catch((err) => console.error(err))
     };
 
     render() {
-        return <form noValidate autoComplete="off">
+        return <form className="editEntry" noValidate autoComplete="off">
             <TextField
                 required
                 id="standard-required"
@@ -88,7 +96,11 @@ class EditEntry extends Component {
                 helperText="Example: +32 36 258741"
             />
             <br/>
-            <Button variant="contained" onClick={this.handleSubmit} color="primary">Edit Entry</Button>
+            <Button id="editEntryBtn" variant="contained" onClick={this.handleSubmit} color="primary">
+                Edit Entry
+            </Button>
+            <br/>
+            <Typography className="alert" variant="caption">{this.state.alert}</Typography>
         </form>
     }
 }

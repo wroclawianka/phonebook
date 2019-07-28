@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import {Typography} from "@material-ui/core";
+import './AddEntry.css'
 import api from "../../api.json"
 import findInvalidValues from "../../invalidValues"
 
@@ -11,7 +13,8 @@ class AddEntry extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            phoneNumber: ""
+            phoneNumber: "",
+            alert: ""
         }
     }
 
@@ -25,7 +28,9 @@ class AddEntry extends Component {
         event.preventDefault();
         let invalidValues = findInvalidValues(this.state);
         if (invalidValues.length) {
-            alert(`invalid values: ${invalidValues}`)
+            this.setState({
+                alert: `invalid values: ${invalidValues}`
+            })
         } else {
             const data = {
                 firstName: this.state.firstName,
@@ -38,12 +43,16 @@ class AddEntry extends Component {
 
     saveEntry = (data) => {
         axios.post(api.url + '/post/entry', data)
-            .then(() => alert("Entry added"))
+            .then(() => {
+                this.setState({
+                    alert: `Entry added`
+                })
+            })
             .catch((err) => console.error(err));
     };
 
     render() {
-        return <form noValidate autoComplete="off">
+        return <form className="addEntry" noValidate autoComplete="off">
             <TextField
                 required
                 id="standard-required"
@@ -67,9 +76,14 @@ class AddEntry extends Component {
                 margin="normal"
                 name="phoneNumber"
                 onChange={this.handleChange}
+                helperText="Example: +32 36 258741"
             />
             <br/>
-            <Button variant="contained" onClick={this.handleSubmit} color="primary">Add Entry</Button>
+            <Button id="addEntryBtn" variant="contained" onClick={this.handleSubmit} color="primary">
+                Add Entry
+            </Button>
+            <br/>
+            <Typography className="alert" variant="caption">{this.state.alert}</Typography>
         </form>
     }
 }

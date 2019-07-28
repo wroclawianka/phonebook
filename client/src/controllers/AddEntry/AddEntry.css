@@ -1,0 +1,11 @@
+.addEntry {
+    text-align: center;
+}
+
+#addEntryBtn{
+    margin: 10px
+}
+
+.alert {
+    color: darkred;
+}

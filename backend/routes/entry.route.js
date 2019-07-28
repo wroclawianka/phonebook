@@ -8,9 +8,9 @@ router.get('/get/entry', (req, res) => {
     Entry.find(
         {
             "$or": [
-                {"firstName": {$regex: `.*${value}.*`}},
-                {"lastName": {$regex: `.*${value}.*`}},
-                {"phoneNumber": {$regex: `.*${value}.*`}}
+                {"firstName": {$regex: `${value}`, '$options' : 'i'}},
+                {"lastName": {$regex: `${value}`, '$options' : 'i'}},
+                {"phoneNumber": {$regex: `${value}`, '$options' : 'i'}}
             ]
         }, (err, data) => {
             if (err) return res.json({success: false, error: err});
