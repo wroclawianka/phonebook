@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import api from "../../api.json"
 import findInvalidValues from "../../invalidValues"
 
@@ -42,15 +44,33 @@ class AddEntry extends Component {
 
     render() {
         return <div>
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange}/>
+            <form noValidate autoComplete="off">
+                <TextField
+                    required
+                    id="standard-required"
+                    label="First Name"
+                    margin="normal"
+                    name="firstName"
+                    onChange={this.handleChange}
+                />
+                <TextField
+                    required
+                    id="standard-required"
+                    label="Last Name"
+                    margin="normal"
+                    name="lastName"
+                    onChange={this.handleChange}
+                />
+                <TextField
+                    required
+                    id="standard-required"
+                    label="Phone number"
+                    margin="normal"
+                    name="phoneNumber"
+                    onChange={this.handleChange}
+                />
                 <br/>
-                <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange}/>
-                <br/>
-                <input type="text" name="phoneNumber" placeholder="Phone number" onChange={this.handleChange}/>
-                <br/>
-                <br/>
-                <input type="submit" value="Add entry"/>
+                <Button variant="contained" onClick={this.handleSubmit} color="primary">Add Entry</Button>
             </form>
         </div>
     }
