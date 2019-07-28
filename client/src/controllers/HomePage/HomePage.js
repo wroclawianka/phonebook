@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 import axios from 'axios';
 import api from "../../api.json"
 import EntriesTable from './EntriesTable/EntriesTable';
-import Typography from "@material-ui/core/Typography";
 
 class HomePage extends Component {
     constructor() {
