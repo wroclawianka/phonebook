@@ -50,7 +50,7 @@ class EditEntry extends Component {
         axios.post(api.url + `/patch/entry/${id}`, body)
             .then(() => {
                 this.setState({
-                    alert: "Entry added"
+                    alert: "Entry edited"
                 })
             })
             .catch((err) => console.error(err))
