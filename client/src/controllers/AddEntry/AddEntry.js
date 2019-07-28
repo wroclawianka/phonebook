@@ -78,7 +78,9 @@ class AddEntry extends Component {
                 onChange={this.handleChange}
             />
             <br/>
-            <Button variant="contained" onClick={this.handleSubmit} color="primary">Add Entry</Button>
+            <Button id="addEntryBtn" variant="contained" onClick={this.handleSubmit} color="primary">
+                Add Entry
+            </Button>
             <br/>
             <Typography className="alert" variant="caption">{this.state.alert}</Typography>
         </form>
