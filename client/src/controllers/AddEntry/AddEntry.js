@@ -52,7 +52,7 @@ class AddEntry extends Component {
     };
 
     render() {
-        return <form noValidate autoComplete="off">
+        return <form className="addEntry" noValidate autoComplete="off">
             <TextField
                 required
                 id="standard-required"
