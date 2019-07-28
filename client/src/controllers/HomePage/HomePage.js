@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import api from "../../api.json"
 import EntriesTable from './EntriesTable/EntriesTable';
@@ -31,7 +32,7 @@ class HomePage extends Component {
                     : <p>Search entries to see results...</p>
                 }
             </div>
-            <a href="/add-entry">Add Entry</a>
+            <Button variant="contained" href="/add-entry">Add Entry</Button>
         </div>
     }
 }
