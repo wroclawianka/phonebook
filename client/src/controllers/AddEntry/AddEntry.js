@@ -44,33 +44,33 @@ class AddEntry extends Component {
 
     render() {
         return <form noValidate autoComplete="off">
-                <TextField
-                    required
-                    id="standard-required"
-                    label="First Name"
-                    margin="normal"
-                    name="firstName"
-                    onChange={this.handleChange}
-                />
-                <TextField
-                    required
-                    id="standard-required"
-                    label="Last Name"
-                    margin="normal"
-                    name="lastName"
-                    onChange={this.handleChange}
-                />
-                <TextField
-                    required
-                    id="standard-required"
-                    label="Phone number"
-                    margin="normal"
-                    name="phoneNumber"
-                    onChange={this.handleChange}
-                />
-                <br/>
-                <Button variant="contained" onClick={this.handleSubmit} color="primary">Add Entry</Button>
-            </form>
+            <TextField
+                required
+                id="standard-required"
+                label="First Name"
+                margin="normal"
+                name="firstName"
+                onChange={this.handleChange}
+            />
+            <TextField
+                required
+                id="standard-required"
+                label="Last Name"
+                margin="normal"
+                name="lastName"
+                onChange={this.handleChange}
+            />
+            <TextField
+                required
+                id="standard-required"
+                label="Phone number"
+                margin="normal"
+                name="phoneNumber"
+                onChange={this.handleChange}
+            />
+            <br/>
+            <Button variant="contained" onClick={this.handleSubmit} color="primary">Add Entry</Button>
+        </form>
     }
 }
 
