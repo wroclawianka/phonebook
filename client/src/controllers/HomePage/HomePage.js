@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import axios from 'axios';
 import api from "../../api.json"
+import './HomePage.css'
 import EntriesTable from './EntriesTable/EntriesTable';
 
 class HomePage extends Component {
@@ -23,7 +24,7 @@ class HomePage extends Component {
 
 
     render() {
-        return <div>
+        return <div className="homePage">
             <TextField
                 required
                 id="standard-required"
@@ -38,7 +39,7 @@ class HomePage extends Component {
                     : <Typography variant="caption">Search entries to see results...</Typography>
                 }
             </div>
-            <Button variant="contained" href="/add-entry">Add Entry</Button>
+            <Button id="addEntryBtn" variant="contained" href="/add-entry">Add Entry</Button>
         </div>
     }
 }
