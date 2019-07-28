@@ -39,7 +39,7 @@ class HomePage extends Component {
                     : <Typography variant="caption">Search entries to see results...</Typography>
                 }
             </div>
-            <Button id="addEntryBtn" variant="contained" href="/add-entry">Add Entry</Button>
+            <Button id="addEntryLink" variant="contained" href="/add-entry">Add Entry</Button>
         </div>
     }
 }
