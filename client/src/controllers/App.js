@@ -11,8 +11,8 @@ import EditEntry from './EditEntry/EditEntry'
 class App extends Component {
     render() {
         return <Container maxWidth="md">
-            <Typography variant="h3">
-                <a className="homepage-link" href="/">Phonebook</a>
+            <Typography variant="h3" className="app-name">
+                <a href="/">Phonebook</a>
             </Typography>
             <Router>
                 <Route exact path='/' component={HomePage}/>
