@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import {Typography} from "@material-ui/core";
 import './EditEntry.css'
 import api from "../../api.json"
 import findInvalidValues from "../../invalidValues"
-import {Typography} from "@material-ui/core";
 
 class EditEntry extends Component {
     constructor() {
