@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import api from "../../api.json"
-import findInvalidValues from "../../invalidValues"
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import api from "../../api.json"
+import findInvalidValues from "../../invalidValues"
 
 class EditEntry extends Component {
     constructor() {
