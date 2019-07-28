@@ -11,5 +11,5 @@ function validateName(value) {
 }
 
 function validatePhoneNumber(value) {
-    return /^[+]{1}[0-9]{2}[ ]{1}[0-9]{2}[ ]{1}[0-9]{6,}$/.test(value)
+    return /^[+]{1}[0-9]{1,}[ ]{1}[0-9]{1,}[ ]{1}[0-9]{6,}$/.test(value)
 }
