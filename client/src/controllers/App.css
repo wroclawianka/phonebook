@@ -1,4 +1,9 @@
-.homepage-link {
+.app-name {
+    text-align: center;
+    padding: 20px;
+}
+
+.app-name a {
     color: inherit;
     text-decoration: none;
 }
