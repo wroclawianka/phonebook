@@ -76,6 +76,7 @@ class AddEntry extends Component {
                 margin="normal"
                 name="phoneNumber"
                 onChange={this.handleChange}
+                helperText="Example: +32 36 258741"
             />
             <br/>
             <Button id="addEntryBtn" variant="contained" onClick={this.handleSubmit} color="primary">
