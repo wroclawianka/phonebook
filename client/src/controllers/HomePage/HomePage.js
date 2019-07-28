@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
+import TextField from "@material-ui/core/TextField";
 import axios from 'axios';
 import api from "../../api.json"
 import EntriesTable from './EntriesTable/EntriesTable';
+import Typography from "@material-ui/core/Typography";
 
 class HomePage extends Component {
     constructor() {
@@ -22,14 +24,18 @@ class HomePage extends Component {
 
     render() {
         return <div>
-            <input className="form-control"
-                   type="text"
-                   name="searchedValue"
-                   onChange={this.getEntries}/>
+            <TextField
+                required
+                id="standard-required"
+                label="Search box"
+                margin="normal"
+                name="searchedValue"
+                onChange={this.getEntries}
+            />
             <div>
                 { this.state.entries.length
                     ? <EntriesTable entries={this.state.entries}/>
-                    : <p>Search entries to see results...</p>
+                    : <Typography variant="caption">Search entries to see results...</Typography>
                 }
             </div>
             <Button variant="contained" href="/add-entry">Add Entry</Button>
