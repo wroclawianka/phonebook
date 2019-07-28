@@ -96,7 +96,9 @@ class EditEntry extends Component {
                 helperText="Example: +32 36 258741"
             />
             <br/>
-            <Button variant="contained" onClick={this.handleSubmit} color="primary">Edit Entry</Button>
+            <Button id="editEntryBtn" variant="contained" onClick={this.handleSubmit} color="primary">
+                Edit Entry
+            </Button>
             <br/>
             <Typography className="alert" variant="caption">{this.state.alert}</Typography>
         </form>
