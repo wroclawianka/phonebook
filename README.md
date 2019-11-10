@@ -1,5 +1,5 @@
 # phonebook
-   - :mega: phonebook application with possibility to add, read, edit and delete entries
+   - :mega: full-stack phonebook application with possibility to add, read, edit and delete entries
    - :wrench: React, Node.js, MongoDB, Material UI, axios, concurrently
    - :date: July 2019
    
